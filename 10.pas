@@ -1,34 +1,26 @@
-﻿program z10;
-const
-N = 20;
-
-var
-arr: array[1..N] of integer;
+program z10;
+var a: array[1..20] of integer;
 i, j: integer;
-
 begin
-Randomize;
-for i := 1 to N do
-arr[i] := Random(101) - 50; 
-
+for i := 1 to 20 do
+a[i]:=random(-50,50);
 Writeln('Исходный массив:');
-for i := 1 to N do
-Write(arr[i], ' ');
+for i:= 1 to 20 do
+Write(a[i], ' ');
 Writeln;
 j := 1;
-for i := 1 to N do
+for i:= 1 to 20 do
 begin
-if arr[i] >= 0 then
+if a[i]>= 0 then
 begin
-arr[j] := arr[i];
+a[j]:= a[i];
 Inc(j);
 end;
 end;
-for i := j to N do
-arr[i] := 0;
+for i := j to 20 do
+a[i]:= 0;
 Writeln('Измененный массив:');
-for i := 1 to N do
-Write(arr[i], ' ');
+for i := 1 to 20 do
+Write(a[i], ' ');
 Writeln;
-
 end.
